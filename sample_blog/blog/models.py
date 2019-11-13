@@ -9,7 +9,7 @@ class PublishedManager(models.Manager):
     デフォルトで公開中のもののみを取得
     """
     def get_queryset(self):
-        return super(PublishedManager, self).get_queryset().filter("published")
+        return super(PublishedManager, self).get_queryset().filter(status="published")
 
 class Article(models.Model):
     STATUS_CHOICES = (

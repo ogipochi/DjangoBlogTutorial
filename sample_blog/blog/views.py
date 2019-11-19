@@ -10,7 +10,7 @@ def article_list(request):
     articles = Article.published.all()             # 公開中の記事を全て取得
     return render(
         request,
-        "blog/article/list.html",
+        "blog/article_list.html",
         {"articles":articles}
     )
 
@@ -22,7 +22,7 @@ def article_detail(request, id):
 
     return render(
         request,
-        "blog/article/detail.html",
+        "blog/article_detail.html",
         {"article":article}
     )
 
@@ -32,7 +32,7 @@ def sample_view(request, id):
         article = Article.objects.get(id=id)
         return render(
         request,
-        "blog/article/detail.html",
+        "blog/article_detail.html",
         {"article":article})
 
     except Article.DoesNotExist as e:

@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ article.title }}</h1>
+  <p class="date">
+    公開日：{{ article.publish }}
+  </p>
+  <p>
+  by {{ article.author }}
+  </p>
+  {{ article.body }}
+{% endblock %}
